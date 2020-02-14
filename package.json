@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "proxy": "http://localhost:8080",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.0",
+    "nodemon": "^1.19.4"
+  }
+}
