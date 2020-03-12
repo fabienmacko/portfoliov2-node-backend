@@ -4,6 +4,10 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const commentsRoute = require("./routes/comments");
+const wakeUpDyno = require("./wakeUpDyno");
+
+console.log(wakeUpDyno);
+
 
 require("dotenv/config");
 
@@ -58,4 +62,7 @@ db.on('error', err => {
 // How to listen on the server
 server.listen(process.env.PORT, () => {
   console.log('Listen PORT', process.env.PORT);
+  wakeUpDyno("http://fabmacko.herokuapp.com");
+  wakeUpDyno("http://fabmackobackend.herokuapp.com");
+  console.log("Starting dyno wake up done for http://fabmacko.herokuapp.com and http://fabmackobackend.herokuapp.com");
 });
