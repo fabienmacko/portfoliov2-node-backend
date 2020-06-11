@@ -63,6 +63,7 @@ db.on('error', err => {
 server.listen(process.env.PORT, () => {
   console.log('Listen PORT', process.env.PORT);
   wakeUpDyno("http://fabmackobackend.herokuapp.com");
+  wakeUpDyno("https://memoryback.herokuapp.com/");
   wakeUpDyno("http://fabienmackowiak.com");
   console.log("Starting dyno wake up done for http://fabienmackowiak.com and http://fabmackobackend.herokuapp.com");
 });
