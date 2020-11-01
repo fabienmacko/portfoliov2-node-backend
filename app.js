@@ -4,9 +4,8 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const commentsRoute = require("./routes/comments");
+const config = require('./config');
 const wakeUpDyno = require("./wakeUpDyno");
-
-console.log(wakeUpDyno);
 
 
 require("dotenv/config");
@@ -44,7 +43,7 @@ app.get("/", (req, res) => {
 })
 
 // Connect to db 
-mongoose.connect("mongodb+srv://fabienmacko:admin@cluster0-sodm4.mongodb.net/portfoliov2?retryWrites=true&w=majority",
+mongoose.connect(config.MONGODB,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -60,8 +59,8 @@ db.on('error', err => {
 });
 
 // How to listen on the server
-server.listen(process.env.PORT, () => {
-  console.log('Listen PORT', process.env.PORT);
+server.listen(5000, () => {
+  console.log('Listen PORT', 5000);
   wakeUpDyno("http://fabmackobackend.herokuapp.com");
   wakeUpDyno("https://memoryback.herokuapp.com/");
   wakeUpDyno("http://fabienmackowiak.com");
