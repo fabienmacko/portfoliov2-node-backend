@@ -38,7 +38,7 @@ const server = http.createServer(app);
 // ROUTES
 
 app.get("/", (req, res) => {
-  res.send("We are on home");
+  res.send("We are on home with http://localhost:3000 full config");
 })
 
 // Connect to db 
