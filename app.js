@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const commentsRoute = require("./routes/comments");
 const config = require('./config');
-const wakeUpDyno = require("./wakeUpDyno");
 
 
 require("dotenv/config");
@@ -16,7 +15,7 @@ require("dotenv/config");
 app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'https://www.fabienmackowiak.com');
+  res.setHeader('Access-Control-Allow-Origin', 'localhost');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -61,8 +60,4 @@ db.on('error', err => {
 // How to listen on the server
 server.listen(5000, () => {
   console.log('Listen PORT', 5000);
-  wakeUpDyno("http://fabmackobackend.herokuapp.com");
-  wakeUpDyno("https://memoryback.herokuapp.com/");
-  wakeUpDyno("http://fabienmackowiak.com");
-  console.log("Starting dyno wake up done for http://fabienmackowiak.com and http://fabmackobackend.herokuapp.com");
 });
