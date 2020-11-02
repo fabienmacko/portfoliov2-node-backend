@@ -16,8 +16,10 @@ router.post("/insert", (req,res)=>{
   console.log("New comment inserted!");
   
   const comment = new Comment({
-    pseudo: req.body.pseudo,
-    description: req.body.description
+    name: req.body.name,
+    jobTitle: req.body.jobTitle,
+    company: req.body.company,
+    comment: req.body.comment,
   });
 
   comment.save()

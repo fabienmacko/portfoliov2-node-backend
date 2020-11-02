@@ -1,15 +1,23 @@
 const mongoose = require("mongoose");
 
 const CommentSchema = mongoose.Schema({
-  pseudo: {
+  name: {
     type: String,
     required: true,
   },
-  description: {
+  jobTitle: {
     type: String,
     required: true,
   },
-  date: {
+  company: {
+    type: String,
+    required: true,
+  },
+  comment: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
     type: Date,
     default: Date.now
   }
