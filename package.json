@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "proxy": "http://localhost:3000",
+  "proxy": "https://www.fabienmackowiak.com",
   "scripts": {
     "start": "nodemon app.js"
   },

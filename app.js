@@ -15,7 +15,7 @@ require("dotenv/config");
 app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Origin', 'https://www.fabienmackowiak.com');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -38,7 +38,7 @@ const server = http.createServer(app);
 // ROUTES
 
 app.get("/", (req, res) => {
-  res.send("We are on home with http://localhost:3000 full config");
+  res.send("We are on home with https://www.fabienmackowiak.com full config");
 })
 
 // Connect to db 
