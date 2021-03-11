@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Comment = require("../models/Comment");
+const cors = require('cors');
 
-router.get("/", (req,res)=>{
+router.get("/",(req,res)=>{
   Comment.find((err, response) => {
     if (!err) {
       res.json(response)

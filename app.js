@@ -5,14 +5,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const commentsRoute = require("./routes/comments");
 const config = require('./config');
-var cors = require('cors');
 
 require("dotenv/config");
-
-
-app.use(cors({
-  origin: 'https://www.fabienmackowiak.com'
-}));
 
 app.use(bodyParser.json());
 app.use("/comments", commentsRoute);
